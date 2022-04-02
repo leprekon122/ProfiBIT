@@ -1,0 +1,32 @@
+{% extends 'main/layout.html'%}
+
+{%block title%}Main page{%endblock%}
+
+
+{%block content%}
+<div class="container">
+    <br>
+    <div class="data">
+        <div class="alert alert-dark">
+            <form method="post">
+                {%csrf_token%}
+                <input class="form-control" type="text" name="category"
+                       placeholder="generation_of_commodety_category"><br>
+                <input class="form-control" type="text" name="product"
+                       placeholder="generation_of_commodety_quantity"><br>
+                <button class="btn btn-dark" type="submit" name="generate" value="generate">Generate_data</button>
+            </form>
+        </div>
+        <div class="alert alert-success">
+            <form method="post">
+                {%csrf_token%}
+                <input class="form-control" type="text" placeholder="edit_price" name="price"><br>
+                <input class="form-control" type="text" placeholder="edit_remains" name="remains"><br>
+                <button class="btn btn-dark" type="submit" name="edit" value="edit">Edit_data</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}
